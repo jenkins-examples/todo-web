@@ -1,7 +1,7 @@
 node() {
 
 	stage 'build'
-		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/apemberton/todo-web.git']]])
+	    checkout scm
 		env.PATH="${tool 'mvn'}/bin:${env.PATH}"
 		sh 'mvn clean package'
 		archive 'target/*.war'
