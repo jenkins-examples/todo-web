@@ -104,7 +104,7 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
     @ConcurrentParameterized.Parameters
     public static LinkedList browsersStrings() {
         LinkedList browsers = new LinkedList();
-        browsers.add(new String[]{"Windows 8.1", "11", "internet explorer"});
+        //browsers.add(new String[]{"Windows 8.1", "11", "internet explorer"});
         browsers.add(new String[]{"OSX 10.8", "6", "safari"});
         return browsers;
     }
@@ -141,7 +141,7 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
     @Test
     public void amazon() throws Exception {
         driver.get("http://www.amazon.com/");
-        assertEquals("Amazon.com", driver.getTitle());
+        assertEquals("Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more", driver.getTitle());
     }
 
     /**
