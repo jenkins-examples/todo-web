@@ -1,4 +1,4 @@
-node('jdk7') {
+node() {
 
 	stage 'build'
 		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/apemberton/todo-web.git']]])
@@ -14,7 +14,7 @@ node('jdk7') {
 stage 'quality-and-functional-test'
 
 	parallel(qualityTest: {
-    	node('jdk7') {
+    	node() {
     		echo 'sonar scan'
         	// sh 'mvn sonar:sonar'
     	}
