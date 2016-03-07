@@ -2,7 +2,7 @@ node('jdk8') {
 
 	stage 'build'
 	    checkout scm
-		env.PATH="${tool 'mvn'}/bin:${env.PATH}"
+		env.PATH="${tool 'mvn-3.3.3-x'}/bin:${env.PATH}"
 		sh 'mvn clean package'
 		archive 'target/*.war'
 
