@@ -1,4 +1,4 @@
-node() {
+node('jdk8') {
 
 	stage 'build'
 	    checkout scm
@@ -14,7 +14,7 @@ node() {
 stage 'quality-and-functional-test'
 
 	parallel(qualityTest: {
-    	node() {
+    	node('jdk8') {
     		echo 'sonar scan'
         	// sh 'mvn sonar:sonar'
     	}
